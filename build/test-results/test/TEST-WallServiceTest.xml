@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="WallServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-03-09T16:46:45" hostname="K-K-K" time="0.063">
+  <properties/>
+  <testcase name="testAddPost" classname="WallServiceTest" time="0.063"/>
+  <testcase name="testUpdatePostFalse" classname="WallServiceTest" time="0.0"/>
+  <testcase name="testUpdatePostTrue" classname="WallServiceTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
