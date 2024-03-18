@@ -63,3 +63,9 @@ data class Live(
     val startTime: Int,
     val endTime: Int
 )
+
+data class PhotoAttachment(override val type: String = "photo", val photo: Photo) : Attachments
+data class VideoAttachment(override val type: String = "video", val video: Video) : Attachments
+data class ImageAttachment(override val type: String = "image", val image: Image) : Attachments
+data class AddedAttachment(override val type: String = "added", val added: Added) : Attachments
+data class LiveAttachment(override val type: String = "live", val live: Live) : Attachments

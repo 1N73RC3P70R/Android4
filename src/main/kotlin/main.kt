@@ -78,27 +78,26 @@ fun main() {
     println(
         "\nНайден? \n" +
                 "Пост №1: $found\n" +
-                "Пост №401: $notFound"
+                "Пост №401: $notFound\n\n\n"
     )
 
 
     val photo = Photo(1, 1, "https://vk.com/some_photo_link", "https://vk.com/another_photo_link")
-    val photoAttachment = attachmentPhoto(photo = photo)
+    val photoAttachment = PhotoAttachment(photo = photo)
 
-    val video = Video(1, 1, "Видео", 60)
-    val videoAttachment = attachmentVideo(video = video)
+    val video = Video(1, 1, "Video", 60)
+    val videoAttachment = VideoAttachment(video = video)
 
     val image = Image(1, 1, 1920, 1080)
-    val imageAttachment = attachmentImage(image = image)
+    val imageAttachment = ImageAttachment(image = image)
 
     val added = Added(1, 1, 10022024)
-    val addedAttachment = attachmentAdded(added = added)
+    val addedAttachment = AddedAttachment(added = added)
 
     val live = Live(1, 1, 10022024, 11022024)
-    val liveAttachment = attachmentLive(live = live)
+    val liveAttachment = LiveAttachment(live = live)
 
     val attachments = listOf(photoAttachment, videoAttachment, imageAttachment, addedAttachment, liveAttachment)
-
     println("$attachments")
 }
 
