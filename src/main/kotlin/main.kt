@@ -14,8 +14,9 @@ data class Post(
     val replyPostId: Int = 0,
     val friendsOnly: Int = 0,
     val reposts: Reposts,
-    val views: Views = Views(30)
-)
+    val views: Views = Views(30),
+    override val attachments: List<Attachment> = emptyList()
+) : Attachments
 
 
 data class Reposts(
@@ -27,7 +28,7 @@ data class Views(val count: Int = 0)
 
 
 object WallService {
-    var currentId = 0
+    var currentId: Int = 0
     var posts = emptyArray<Post>()
 
     fun add(post: Post): Post {

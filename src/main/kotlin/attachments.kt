@@ -1,35 +1,10 @@
 package ru.netology
 
 interface Attachments {
-    val type: String
+    val attachments: List<Attachment>
 }
 
-
-data class attachmentPhoto(
-    override val type: String = "photo",
-    val photo: Photo
-) : Attachments
-
-data class attachmentVideo(
-    override val type: String = "video",
-    val video: Video
-) : Attachments
-
-data class attachmentImage(
-    override val type: String = "image",
-    var image: Image
-) : Attachments
-
-data class attachmentAdded(
-    override val type: String = "added",
-    var added: Added
-) : Attachments
-
-data class attachmentLive(
-    override val type: String = "live",
-    var live: Live
-) : Attachments
-
+sealed class Attachment(val type: String)
 data class Photo(
     val id: Int,
     val ownerId: Int,
@@ -64,8 +39,8 @@ data class Live(
     val endTime: Int
 )
 
-data class PhotoAttachment(override val type: String = "photo", val photo: Photo) : Attachments
-data class VideoAttachment(override val type: String = "video", val video: Video) : Attachments
-data class ImageAttachment(override val type: String = "image", val image: Image) : Attachments
-data class AddedAttachment(override val type: String = "added", val added: Added) : Attachments
-data class LiveAttachment(override val type: String = "live", val live: Live) : Attachments
+data class PhotoAttachment(val photo: Photo) : Attachment("photo")
+data class VideoAttachment(val video: Video) : Attachment("video")
+data class ImageAttachment(val image: Image) : Attachment("image")
+data class AddedAttachment(val added: Added) : Attachment("added")
+data class LiveAttachment(val live: Live) : Attachment("live")
