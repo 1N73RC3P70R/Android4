@@ -72,14 +72,14 @@ fun main() {
     WallService.add(Post(400, 1, 1, 2, 10032024, reposts = Reposts(1, 1), views = Views(30)))
     WallService.update(Post(400, 1, 1, 2, 10032024, reposts = Reposts(1, 1), views = Views(100)))
 
-    val notFound = WallService.update(Post(401, 1, 1, 2, 10032024, reposts = Reposts(1, 1), views = Views(150)))
+    val notFound = WallService.update(Post(404, 1, 1, 2, 10032024, reposts = Reposts(1, 1), views = Views(150)))
     val found = WallService.update(Post(1, 1, 1, 1, 1032024, reposts = Reposts(1, 1), views = viewsNew))
 
     WallService.printPosts()
     println(
         "\nНайден? \n" +
                 "Пост №1: $found\n" +
-                "Пост №401: $notFound\n\n\n"
+                "Пост №404: $notFound\n\n\n"
     )
 
 
