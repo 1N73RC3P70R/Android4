@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="AttachmentsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-03-18T17:33:55" hostname="K-K-K" time="0.009">
+<testsuite name="AttachmentsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2024-03-20T11:36:08" hostname="K-K-K" time="0.011">
   <properties/>
-  <testcase name="testImageAttachment" classname="AttachmentsTest" time="0.009"/>
+  <testcase name="testAddedAttachment" classname="AttachmentsTest" time="0.007"/>
+  <testcase name="testVideoAttachment" classname="AttachmentsTest" time="0.001"/>
+  <testcase name="testAttachmentPhoto" classname="AttachmentsTest" time="0.001"/>
+  <testcase name="testLiveAttachment" classname="AttachmentsTest" time="0.001"/>
+  <testcase name="testImageAttachment" classname="AttachmentsTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

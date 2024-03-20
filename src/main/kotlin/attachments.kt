@@ -1,9 +1,5 @@
 package ru.netology
 
-interface Attachments {
-    val attachments: List<Attachment>
-}
-
 sealed class Attachment(val type: String)
 data class Photo(
     val id: Int,

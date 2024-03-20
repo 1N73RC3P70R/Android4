@@ -15,8 +15,8 @@ data class Post(
     val friendsOnly: Int = 0,
     val reposts: Reposts,
     val views: Views = Views(30),
-    override val attachments: List<Attachment> = emptyList()
-) : Attachments
+    val attachments: List<Attachment> = emptyList()
+)
 
 
 data class Reposts(
