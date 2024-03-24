@@ -74,12 +74,6 @@ data class Comment(
     val text: String
 )
 
-data class SpamComment(
-    val ownerId: Int,
-    val commentId: Int,
-    val reason: Reason
-)
-
 enum class Reason(val code: Int, val description: String) {
     SPAM(0, "Спам"),
 }

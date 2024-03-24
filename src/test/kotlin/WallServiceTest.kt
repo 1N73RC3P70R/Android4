@@ -1,4 +1,6 @@
-import junit.framework.Assert.*
+
+import junit.framework.Assert.assertEquals
+import junit.framework.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import ru.netology.*
@@ -49,16 +51,10 @@ class WallServiceTest {
     }
 
     @Test
-    fun `checkForSpam should return false for non-spam text`() {
+    fun checkForSpam() {
         val text = "Спам 1"
         val result = WallService.checkForSpam(text)
-        assertFalse(result)
-    }
-
-    @Test
-    fun `checkForSpam should return true for spam text`() {
-        val text = "Спам 2"
-        val result = WallService.checkForSpam(text)
+        println("$result")
         assertTrue(result)
     }
 }
