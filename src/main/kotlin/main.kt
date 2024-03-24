@@ -107,7 +107,7 @@ object WallService {
     }
 
     fun checkForSpam(text: String): Boolean {
-        return false
+        return text.contains("Спам")
     }
 
     fun add(post: Post): Post {
