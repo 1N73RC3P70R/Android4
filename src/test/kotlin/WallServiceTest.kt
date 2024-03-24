@@ -1,10 +1,7 @@
-import junit.framework.Assert.assertEquals
+import junit.framework.Assert.*
 import org.junit.Before
 import org.junit.Test
-import ru.netology.Post
-import ru.netology.Reposts
-import ru.netology.Views
-import ru.netology.WallService
+import ru.netology.*
 
 class WallServiceTest {
 
@@ -34,5 +31,34 @@ class WallServiceTest {
         val updatedPost = Post(401, 1, 1, 2, 10032024, reposts = Reposts(1, 1), views = Views(150))
         val result = WallService.update(updatedPost)
         assertEquals(false, result)
+    }
+
+    @Test
+    fun shouldAddCommentToExistingPost() {
+        val post = Post(1, 1, 1, 1, 1032024, reposts = Reposts(1, 1), views = Views(30))
+        WallService.add(post)
+
+        val comment = Comment(1, 1, 24032024, "Пост 1")
+        WallService.createComment(1, comment)
+    }
+
+    @Test(expected = PostNotFoundException::class)
+    fun shouldThrowExceptionForNonExistingPost() {
+        val comment = Comment(2, 1, 23032024, "Пост 2")
+        WallService.createComment(2, comment)
+    }
+
+    @Test
+    fun `checkForSpam should return false for non-spam text`() {
+        val text = "Спам 1"
+        val result = WallService.checkForSpam(text)
+        assertFalse(result)
+    }
+
+    @Test
+    fun `checkForSpam should return true for spam text`() {
+        val text = "Спам 2"
+        val result = WallService.checkForSpam(text)
+        assertTrue(result)
     }
 }
